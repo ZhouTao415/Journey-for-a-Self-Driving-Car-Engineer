@@ -18,5 +18,31 @@ This repository introduces the process of my learning, covering the theoretical 
 - **C++**
 - Python
   
+## Planning Algorithm
+- A*
+- Hybrid A*
+- RRT
+- Dijkstra
+- Polynomial
+- Bézier
+- B-spline
+- RS curve
+- Dubins curve
+- Circular curve
+- Spiral curves
+- ...
+
+## Math Theory
+
+### Computational Geometry
+-  Vectors
+-  Scalars
+-  Matrices
+-  Coordinate Transformations
+-  Collision Detection
+-  Curve-Line Intersection
+-  Distance from Point to Line
+-  ...
+-  
 # Quelle:
 - [如何能成为一个优秀的自动驾驶决策规划控制工程师？](https://zhuanlan.zhihu.com/p/371201813)
