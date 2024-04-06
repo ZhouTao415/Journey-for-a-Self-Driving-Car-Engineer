@@ -1,6 +1,6 @@
 <div align="center">
 📖 Github
-&emsp;&emsp; | &emsp;&emsp;
+&emsp;&emsp;
 <!-- <a href="https://interview.huihut.com">📚 Docsify</a> -->
 </div> 
 <br>
