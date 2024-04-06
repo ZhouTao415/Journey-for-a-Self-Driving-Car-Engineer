@@ -126,7 +126,9 @@ constexpr int *p1 = &j; // p1 is a constant pointer to the int j
 - static constexpr
 ```cpp 
 static constexpr int period = 30;// period is a constant expression
+constexpr static char const* name = "Dog"
 ```
+
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
