@@ -16,7 +16,7 @@ This repository introduces the process of my learning, covering the theoretical 
 - ...
 ## Code Skill
 - **C++**
-  - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/tree/main/README.md"> Interviews </a> 
+  - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/C%2B%2B/README.md"> Interviews </a> 
 - Python
   
 ## Planning Algorithm
