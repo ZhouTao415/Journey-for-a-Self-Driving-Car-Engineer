@@ -129,6 +129,9 @@ static constexpr int period = 30;// period is a constant expression
 constexpr static char const* name = "Dog"
 ```
 #### 2.2.4. #define VS const
+#define
+- 定义了一个宏#define PI 3.14，每当代码中出现PI，预处理器就会将其替换为3.14，然后编译器处理替换后的代码。
+- 
 |#define |	const|
 |-------|----|
 |宏定义, 相当于字符替换	| 常量声明|
@@ -137,6 +140,11 @@ constexpr static char const* name = "Dog"
 |不分配内存	| 要分配内存|
 |存储在代码段(.text)	| 存储在数据段(.data, .bbs)|
 |可通过#undef取消	| 不可取消|
+
+- 关于数据段
+  - .data段：用于存储初始化的全局变量、静态变量等。
+  - .bss段（Block Started by Symbol）：用于存储未初始化的全局变量和静态变量。
+  - .text段：包含程序的执行代码。
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
