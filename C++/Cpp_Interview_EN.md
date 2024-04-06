@@ -4,9 +4,9 @@
 <br>
 
 <div align="center">
-简体中文
+<a href="https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/C%2B%2B/README.md">English</a> 
 &emsp;&emsp; | &emsp;&emsp;
-<a href="https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/C%2B%2B/README.md">English</a>
+简体中文
 </div> 
 <br>
 
