@@ -151,7 +151,7 @@ constexpr static char const* name = "Dog"
 
 ## 4. 表达式
 
-### 4.1. 右值
+### 4.1. 右值 & 左值
 C++的表达式要不然是右值(rvalue), 要不然是左值(lvalue). 这两个名词是从 C 语言继承过来的, 原本是为了帮助记忆: 左值可以位于赋值语句的左侧, 右值则不能.
 
 当一个对象被用做右值的时候, 用的是对象的值(内容); 当对象被用做左值的时候, 用的是对象的身份(在内存中的位置).
@@ -185,6 +185,40 @@ const UPInt UPInt::operator++(int)
 ```
 
 ### 4.3. sizeof运算符
+
+sizeof运算符的结果部分地依赖于其作用的类型:
+
+- 对char或者类型为char的表达式执行sizeof运算, 结果得 1.
+- 对引用类型执行sizeof运算得到被引用对象所占空间的大小.
+- 对指针执行sizeof运算得到指针本身所占空间的大小.
+- 对解引用指针执行sizeof运算得到指针指向的对象所占空间的大小.
+- 对数组执行sizeof运算得到整个数组所占空间的大小, 等价于对数组中所有元素各执行一次sizeof运算并将所得结果求和.
+- 对string对象或vector对象执行sizeof运算只返回该类型固定部分的大小.
+
+### 4.3.2. 类执行sizeof
+
+```cpp
+class A {};
+class B { B(); ~B() {} };
+class C { C(); virtual ~C() {} };
+class D { D(); ~D() {} int d; };
+class E { E(); ~E() {} static int e; };
+int main(int argc, char* argv[]) {
+    std::cout << sizeof(A) << std::endl; // 输出结果为1
+    std::cout << sizeof(B) << std::endl; // 输出结果为1
+    std::cout << sizeof(C) << std::endl; // 输出结果为8,实例中有一个指向虚函数表的指针
+    std::cout << sizeof(D) << std::endl; // 输出结果为4,int占4个字节
+    std::cout << sizeof(E) << std::endl; // 输出结果为1,static不算
+    return 0;
+}
+```
+
+- 定义一个空类型, 里面没有成员变量和成员函数, 求sizeof结果为 1. 空类型的实例中不包括任何信息, 本来求sizeof得到0, 但是当我们声明该类型的实例的时候, 它必须在内存中占有一定的空间, 否则则无法使用这些实例, 至于占用多少内存, 由编译器决定, 一般有一个char类新的内存.
+- 如果在该类型中添加一个构造函数和析构函数, 再对该类型求sizeof结果仍为 1. 调用构造函数和析构函数只需要知道函数的地址即可, 而这些函数的类型只与类型相关, 而与类型的实例无关, 编译器也不会因为这两个函数在实例内添加任何额外的信息.
+- 如果把析构函数标记为虚函数, 就会为该类型生成虚函数表, 并在该类型的每一个实例中添加一个指向虚函数表的指针. 在 32 位的机器上, 一个指针占 4 字节的空间, 因此求sizeof得到 4; 在 64 位机器上, 一个指针占 8 字节的空间, 因此求sizeof得到 8.
+
+
+
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
 - [C++ Interview](https://github.com/huihut/interview)
