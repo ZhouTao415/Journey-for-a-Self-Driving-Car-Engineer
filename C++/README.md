@@ -225,13 +225,49 @@ int i, j;
 double slope = i/j;
 ```
 为此，我们需要一种方法来显式地将i和/或j转换为double。我们使用**cast**请求一个显式的转换。
+```cpp
+cast-name<type>(expression);
+```
 
 - static_cast: 任何具有明确定义的类型转换, 只要不包含底层const, 都可以使用static_cast.
 - dynamic_cast: 用于(动态)多态类型转换. 只能用于含有虚函数的类, 用于类层次间的向上向下转化.
 - const_cast: 去除"指向常量的指针"的const性质.
 - reinterpret_cast: 为运算对象的位模式提供较低层次的重新解释, 常用于函数指针的转换.
 
-
+```cpp
+double slope = static_cast<double>(j) / i; // cast used to force floating-point division
+void* p = &d; // ok: address of any nonconst object can be stored in a void*
+double *dp = static_cast<double*>(p); // ok: converts void* back to the original pointer type
+```
+```cpp
+dynamic_cast<type*>(e)
+dynamic_cast<type&>(e)
+dynamic_cast<type&&>(e)
+{
+ (Derived *dp = dynamic_cast<Derived*>(bp))
+ // use the Derived object to which dp points
+} else { // bp points at a Base object
+ // use the Base object to which bp points
+}
+void f(const Base &b)
+{
+ try { const Derived &d = dynamic_cast<const Derived&>(b);
+ // use the Derived object to which b referred
+ } catch (bad_cast) {
+ // handle the fact that the cast failed
+ 
+}
+```
+```cpp
+const char *cp;
+char *q = static_cast<char*>(cp); // error: static_cast can't cast away const
+static_cast<string>(cp); // ok: converts string literal to string
+const_cast<string>(cp); // error: const_cast only changes constness
+```
+```cpp
+int *ip;
+char *pc = reinterpret_cast<char*>(ip);
+```
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
