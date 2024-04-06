@@ -11,6 +11,7 @@ This repository introduces the process of my learning, covering the theoretical 
 - ROS2
 - CMake
 - Git
+- <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/tree/main/Git"> Git </a> 
 - GDB
 - Docker
 - ...
