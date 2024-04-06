@@ -99,6 +99,22 @@ int &refVal2; // error: a reference must be initialized
 - constexpr函数是指能用于常量表达式的函数.
   - 函数的返回类型及所有的形参的类型都得是字面值类型.
   - 函数体中必须有且只有一条return语句.
+```cpp
+const int max_files = 20; // max_files is a constant expression
+const int limit = max_files + 1; // limit is a constant expression
+int staff_size = 27; // staff_size is not a constant expression
+const int sz = get_size(); // sz is not a constant expression
+```
+
+```cpp
+constexpr int mf = 20; // 20 is a constant expression
+constexpr int limit = mf + 1; // mf + 1 is a constant expression
+constexpr int sz = size(); // ok only if size is a constexpr function
+```
+```cpp
+const int *p = nullptr; // p is a pointer to a const int
+constexpr int *q = nullptr; // q is a const pointer to int
+```
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
