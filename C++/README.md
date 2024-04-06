@@ -128,7 +128,15 @@ constexpr int *p1 = &j; // p1 is a constant pointer to the int j
 static constexpr int period = 30;// period is a constant expression
 constexpr static char const* name = "Dog"
 ```
-
+#### 2.2.4. #define VS const
+|#define |	const|
+|-------|----|
+|宏定义, 相当于字符替换	| 常量声明|
+|预处理器处理	| 编译器处理|
+|无类型安全检查	| 有类型安全检查|
+|不分配内存	| 要分配内存|
+|存储在代码段(.text)	| 存储在数据段(.data, .bbs)|
+|可通过#undef取消	| 不可取消|
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
