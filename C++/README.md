@@ -49,7 +49,7 @@ int &refVal2; // error: a reference must be initialized
   int a = 1;
   const &b = a;
   a = 2;
-  std::cout << b << "=" << 2 << std::endl;
+  std::cout << b << "= 2"<< std::endl;
   ```
 
 **指针(pointers):**
