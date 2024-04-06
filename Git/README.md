@@ -1,5 +1,4 @@
-# ROS2_Project und Git
-## Git
+# Git
 Overview:
 
 <img src="./figures/Git_Command.JPG" width="50%" height="50%">
