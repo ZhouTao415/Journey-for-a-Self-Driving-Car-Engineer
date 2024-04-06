@@ -147,6 +147,44 @@ constexpr static char const* name = "Dog"
   - .bss段（Block Started by Symbol）：用于存储未初始化的全局变量和静态变量。
   - .text段：包含程序的执行代码。
 
+## 3. 字符串、向量和数组
+
+## 4. 表达式
+
+### 4.1. 右值
+C++的表达式要不然是右值(rvalue), 要不然是左值(lvalue). 这两个名词是从 C 语言继承过来的, 原本是为了帮助记忆: 左值可以位于赋值语句的左侧, 右值则不能.
+
+当一个对象被用做右值的时候, 用的是对象的值(内容); 当对象被用做左值的时候, 用的是对象的身份(在内存中的位置).
+
+### 4.2. 自增和自减运算符
+Increment and Decrement Operators
+**++i/i++**
+前置版本++i: 首先将运算对象加 1, 然后将改变后的对象作为求值结果.
+
+后置版本i++: 也会将运算对象加 1, 但是求解结果是运算对象改变之前的那个值的副本.
+```cpp
+int i = 0, j;
+j = ++i; // j = 1, i = 1: prefix yields the incremented value
+j = i++; // j = 1, i = 2: postfix yields the unincremented value
+```
+以下摘录自 More Effective C++ Item 6:
+```cpp
+// prefix form(++i): increment and fetch
+UPInt&  UPInt::operator++()
+{
+    *this +=1；        // increment
+    return *this；     // fetch
+}
+// postfix form(i++): fetch and increment
+const UPInt UPInt::operator++(int)
+{
+    const UpInt oldValue = *this; // fetch
+    ++(*this);                    // increment
+    return oldValue；             // return what was fetched
+}
+```
+
+### 4.3. sizeof运算符
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
 - [C++ Interview](https://github.com/huihut/interview)
