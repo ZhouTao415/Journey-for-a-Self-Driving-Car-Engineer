@@ -44,6 +44,12 @@ int &refVal = ival; // refVal refers to (is another name for) ival
 int &refVal2; // error: a reference must be initialized
 ```
 - 因为引用不是一个对象, 所以不能定义引用的引用.
+- ```cpp
+  int a = 1;
+  const &b = a;
+  a = 2;
+  std::cout << b << "=" << 2 << std::endl;
+  ```
 
 **指针(pointers):**
 
@@ -85,6 +91,13 @@ int &refVal2; // error: a reference must be initialized
   - 常量指针必须在声明的同时对其初始化, 不允许先声明一个指针常量随后再对其赋值, 这和声明一般的常量是一样的.
   - ``` int * const p = &a;```
 
+#### 2.2.3. cosntexpr
+- 常量表达式(const expression)是**指值不会改变**并且在**编译过程就能得到计算结果**的表达式.
+- 一般来说, 如果认定变量是一个常量表达式, 那就把它声明成constexpr类型.
+- 一个constexpr指针的初始值必须是nullptr或者0, 或者是存储于某个固定地址中的对象.
+- constexpr函数是指能用于常量表达式的函数.
+  - 函数的返回类型及所有的形参的类型都得是字面值类型.
+  - 函数体中必须有且只有一条return语句.
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
