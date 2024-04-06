@@ -123,6 +123,9 @@ constexpr int i = 42; // type of i is const int
 constexpr const int *p = &i; // p is a constant pointer to the const int i
 constexpr int *p1 = &j; // p1 is a constant pointer to the int j
 ```
+```cpp 
+static constexpr int period = 30;// period is a constant expression
+```
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
