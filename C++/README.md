@@ -38,6 +38,7 @@ The title, consistent with the book "C++ Primer."
 
 引用即别名: 引用(reference)为对象起了另外一个名字, 引用类型引用(refers to)另外一种类型.
 - 定义引用时, 程序把引用和它的初始值绑定在一起, 而不是将初始值拷贝给引用. 一旦初始化完成, 引用将和它的初始值对象一直绑定在一起. 因为无法令引用重新绑定到另外一个对象, 因此引用必须初始化.
+- const reference
 ```cpp
 int ival = 1024;
 int &refVal = ival; // refVal refers to (is another name for) ival
