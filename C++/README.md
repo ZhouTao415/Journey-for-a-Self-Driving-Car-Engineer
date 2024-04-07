@@ -256,7 +256,6 @@ void f(const Base &b)
  // use the Derived object to which b referred
  } catch (bad_cast) {
  // handle the fact that the cast failed
- 
 }
 ```
 ```cpp
@@ -269,6 +268,13 @@ const_cast<string>(cp); // error: const_cast only changes constness
 int *ip;
 char *pc = reinterpret_cast<char*>(ip);
 ```
+
+## 5. 语句
+## 6. 函数
+### 6.1. 函数基础
+#### 6.1.1. 形参和实参
+
+实参是形参的初始值.
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
