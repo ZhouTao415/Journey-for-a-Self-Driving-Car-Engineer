@@ -52,7 +52,7 @@ Intersection of Segments - 线段与线段之间的相交
 Find the given point's closest segment in polyline using linear search. - 求距离给定点最近的线段。
 
 
-Bibliography: 
+## Bibliography: 
 * <a href="https://github.com/CHH3213/Math_Geometry">Math_Geometry</a>
 * <a href="https://blog.csdn.net/weixin_42301220/article/details/135439512">计算几何学 | 实用计算几何学知识c++代码实现</a>
 * 
