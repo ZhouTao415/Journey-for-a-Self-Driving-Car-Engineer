@@ -2,7 +2,7 @@
 📖 Computational_geometry
 </div> 
 
-# Computational_geometry 
+# Computational Geometry 
 
 Bibliography: 
 - [C++面经](https://zhuanlan.zhihu.com/p/675399586)
