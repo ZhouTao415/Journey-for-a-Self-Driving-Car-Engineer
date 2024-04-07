@@ -17,7 +17,7 @@ This repository introduces the process of my learning, covering the theoretical 
 ## Code Skill
 - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/C%2B%2B"> C++ </a> 
 - Python
-* ⚡️ Data Structures & Algorithms
+* Data Structures & Algorithms
   *  LeetCode
   *  <a href = "https://www.programmercarl.com/"> 代码随想录 </a> 
   
