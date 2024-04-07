@@ -2,16 +2,19 @@
 〽️ Computational_geometry
 </div> 
 
-## 📑 目录
-
 # Computational Geometry 
 
+## 📑 Contents 目录
+* [Geometry](#Geometry)
+* [Algorithms](#Algorithms)
+<a id="Geometry"></a>
 ## Geometry
 * Point
 * Line
 * Segment
 * Polyline
 
+<a id="Algorithms"></a>
 ## Algorithms
 ### Bssic Operation
   * dot product - 点积
