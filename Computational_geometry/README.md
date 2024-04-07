@@ -8,11 +8,10 @@ Bibliography:
 - [C++面经](https://zhuanlan.zhihu.com/p/675399586)
   
 # Chapter 1. Getting Started
-The purpose of this text is to organize commonly asked questions in interviews. For specific details, it is necessary to refer to books for study, such as 
-- "C++ Primer"
-- "Effective C++"
-- "Inside the C++ Object Model"
-The title, consistent with the book "C++ Primer."
+
+
+Quelle: 
+* <a href="https://github.com/CHH3213/Math_Geometry">计算几何学 | 实用计算几何学知识c++代码实现</a>
 
   
 
