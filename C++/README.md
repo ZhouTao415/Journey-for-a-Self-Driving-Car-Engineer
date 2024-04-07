@@ -283,6 +283,23 @@ char *pc = reinterpret_cast<char*>(ip);
 修饰类的成员变量和成员函数: 使其只属于类而不是属于某个对象. 对多个对象来说, 静态数据成员只存储一处, 供所有对象共用.
 静态成员调用格式<类名>::<静态成员>
 静态成员函数调用格式<类名>::<静态成员函数名>(<参数表>)
+```cpp
+size_t count_calls() {
+ static size_t ctr = 0; // value will persist across calls
+ return ++ctr;
+}
+int main() {
+ for (size_t i = 0; i != 10; ++i) cout << count_calls() << endl; return 0;
+}
+/*
+- This program will print the numbers from 1 through 10 inclusive.
+- Before control flows through the definition of ctr for the first time, ctr is created and given an initial value of 0. 
+- Each call increments ctr and returns its new value. 
+- Whenever count_calls is executed, the variable ctr already exists and has whatever value was in that variable the last time the function exited. 
+- Thus, on the second invocation, the value of ctr is 1, on the third it is 2, and so on.
+*/
+```
+
 
 ### 6.2. 参数传递 Argument Passing
 - passed by value
