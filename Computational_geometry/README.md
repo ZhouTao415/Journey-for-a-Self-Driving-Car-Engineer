@@ -1,16 +1,8 @@
 <div align="center">
-📖 Github
+📖 Computational_geometry
 </div> 
-<br>
 
-<div align="center">
-<a href="https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/C%2B%2B/README.md">English</a> 
-&emsp;&emsp; | &emsp;&emsp;
-简体中文
-</div> 
-<br>
-
-# C++ Interview for Autonomous Driving
+# Computational_geometry 
 
 Bibliography: 
 - [C++面经](https://zhuanlan.zhihu.com/p/675399586)
