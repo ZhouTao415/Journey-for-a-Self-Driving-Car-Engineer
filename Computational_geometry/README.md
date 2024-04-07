@@ -11,18 +11,18 @@
 * Polyline
 
 ## Algorithms
-* Bssic Operation
+### Bssic Operation
   * dot product - 点积
   * Cross product - 叉积
-* Projection-投影
+### Projection-投影
   * Projection length of point p - 点到线段的投影长度
   * Projection point of point p - 点到线段的投影点
-* Distance-求距离
+### Distance-求距离
   * Point to Point
   * Point to Line
   * Point to Segment
   * Segment to Segment 
-* Side-求相对位置关系
+### Side-求相对位置关系
 一个点与线段之间的位置关系, 定义一个enum来表示
 ```cpp
 enum class Side{
@@ -42,13 +42,13 @@ enum class Side{
   * Point in front of the Segment - 点在线段前面
   * Point behind the Segment - 点在线段后面
   * Point indside the Segment - 点在线段内部
-* Intersection-相交
+### Intersection-相交
 Intersection of Segments - 线段与线段之间的相交
   * Determining Intersection - 判断是否相交
   * Calculating the Intersection Point - 若相交则求出相交点
-* Curvature-曲率
+### Curvature-曲率
 * Obtain curvature according to p1,p2,p3. - 通过三点求曲率：
-* Find closest segment-求polyline上距离给定点最近的线段
+### Find closest segment-求polyline上距离给定点最近的线段
 Find the given point's closest segment in polyline using linear search. - 求距离给定点最近的线段。
 
 
