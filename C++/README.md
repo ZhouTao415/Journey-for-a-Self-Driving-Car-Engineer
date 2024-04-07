@@ -283,12 +283,13 @@ char *pc = reinterpret_cast<char*>(ip);
 修饰类的成员变量和成员函数: 使其只属于类而不是属于某个对象. 对多个对象来说, 静态数据成员只存储一处, 供所有对象共用.
 静态成员调用格式<类名>::<静态成员>
 静态成员函数调用格式<类名>::<静态成员函数名>(<参数表>)
-### 6.2. 参数传递 Argument Passing
 
-指针参数传递本质上是值传递, 它所传递的是一个地址值.
-一般情况下, 输入用传值或者传const reference. 输出传引用(或者指针).
-passed by value
-passed by value
+### 6.2. 参数传递 Argument Passing
+- passed by value
+- passed by value
+- 指针参数传递本质上是值传递, 它所传递的是一个地址值.
+- 一般情况下, 输入用传值或者传const reference. 输出传引用(或者指针).
+
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
