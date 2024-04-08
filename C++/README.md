@@ -444,54 +444,53 @@ bool b3 = lengthCompare("hello", "goodbye"); // equivalent call
 
 <details>
   <summary>Callback 回调函数 案列</summary>
-```cpp
-#include <iostream>
-#include <algorithm> // for std::sort
 
-// 定义比较函数的类型
-typedef bool (*Compare)(int, int);
-
-// 升序比较
-bool ascending(int a, int b) {
-    return a < b;
-}
-
-// 降序比较
-bool descending(int a, int b) {
-    return a > b;
-}
-
-// 排序函数，接受数组、数组大小和比较函数作为参数
-void sortArray(int* array, int size, Compare compFunc) {
-    std::sort(array, array + size, compFunc);
-}
-
-// 主函数
-int main() {
-    int myArray[] = {3, 1, 4, 1, 5, 9, 2, 6};
-    int size = sizeof(myArray) / sizeof(myArray[0]);
-
-    // 使用升序排序
-    sortArray(myArray, size, ascending);
-    std::cout << "Ascending order: ";
-    for(int i = 0; i < size; ++i) {
-        std::cout << myArray[i] << ' ';
+    #include <iostream>
+    #include <algorithm> // for std::sort
+    
+    // 定义比较函数的类型
+    typedef bool (*Compare)(int, int);
+    
+    // 升序比较
+    bool ascending(int a, int b) {
+        return a < b;
     }
-    std::cout << '\n';
-
-    // 使用降序排序
-    sortArray(myArray, size, descending);
-    std::cout << "Descending order: ";
-    for(int i = 0; i < size; ++i) {
-        std::cout << myArray[i] << ' ';
+    
+    // 降序比较
+    bool descending(int a, int b) {
+        return a > b;
     }
-    std::cout << '\n';
-
-    return 0;
-}
+    
+    // 排序函数，接受数组、数组大小和比较函数作为参数
+    void sortArray(int* array, int size, Compare compFunc) {
+        std::sort(array, array + size, compFunc);
+    }
+    
+    // 主函数
+    int main() {
+        int myArray[] = {3, 1, 4, 1, 5, 9, 2, 6};
+        int size = sizeof(myArray) / sizeof(myArray[0]);
+    
+        // 使用升序排序
+        sortArray(myArray, size, ascending);
+        std::cout << "Ascending order: ";
+        for(int i = 0; i < size; ++i) {
+            std::cout << myArray[i] << ' ';
+        }
+        std::cout << '\n';
+    
+        // 使用降序排序
+        sortArray(myArray, size, descending);
+        std::cout << "Descending order: ";
+        for(int i = 0; i < size; ++i) {
+            std::cout << myArray[i] << ' ';
+        }
+        std::cout << '\n';
+    
+        return 0;
+    }
 
 </details>
-```
 
 
 ## Bibliography: 
