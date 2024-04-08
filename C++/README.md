@@ -340,12 +340,25 @@ double Account::interestRate = initRate();
 ### 6.3. 内联函数
 #### 6.3.1. 使用
 
-将函数指定为内联函数(inline), 通常就是将它在每个调用点上"内联地"展开.
+将函数指定为内联函数(inline), 通常就是将它在每个调用点上"内联地 (in line)"展开.
 
 一般来说, 内联机制用于优化规模较小(Google C++ Style 建议 10 行以下)、流程直接、频繁调用的函数.
 
 在类声明中定义的函数, 除了虚函数的其他函数都会自动隐式地当成内联函数.
+```cpp
+inline int add(int a, int b) {
+    return a + b;
+}
 
+int main() {
+    int result = add(5, 3);
+}
+// 在编译时，编译器会将main函数中的add(5, 3)调用直接替换为：
+int main() {
+// 这样，程序运行时就没有了函数调用的开销，因为它直接执行了相加的操作，而不是跳转到函数然后再返回。
+    int result = 5 + 3; 
+}
+```
 #### 6.3.2. 编译器对inline函数的处理步骤
 
 1. 将inline函数体复制到inline函数调用点处;
