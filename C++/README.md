@@ -399,8 +399,52 @@ int main() {
     getValue() = 10;    // 错误：不能将值赋给一个右值
 }
 ```
+## 6.5. 特殊用途语言特性
+### 6.5.1. 调试帮助
 
-Bibliography: 
+assert是一种预处理器宏 (preprocessor macro). 使用一个表达式作为它的条件:
+```cpp
+assert(expr);
+```
+首先对expr求值, 如果表达式为false. assert输出信息并终止程序的执行. 如果表达式为true. assert什么也不做
+
+## 6.6. 函数指针
+函数指针指向的是函数而非对象. 和其他指针一样, 函数指针指向某种特定类型. 函数的类型由它的返回类新和形参共同决定, 与函数名无关.
+
+C 在编译时, 每一个函数都有一个入口地址, 该入口地址就是函数指针所指向的地址.
+
+有了指向函数的指针变量后,可用该指针变量调用函数,就如同用指针变量可引用其他类型变量一样
+
+用途: 调用函数和做函数的参数, 比如回调函数.
+```cpp
+char * fun(char * p)  {…}  // 函数fun
+char * (*pf)(char * p);    // 函数指针pf
+pf = fun;                  // 函数指针pf指向函数fun
+pf(p);                     // 通过函数指针pf调用函数fun
+```
+```cpp
+// compares lengths of two strings
+bool lengthCompare(const string &, const string &);
+
+// pf points to a function returning bool that takes two const string references
+bool (*pf)(const string &, const string &); // uninitialized
+
+// The parentheses around *pf are necessary. If we omit the parentheses,
+   then we declare pf as a function that returns a pointer to bool:
+// declares a function named pf that returns a bool*
+bool *pf(const string &, const string &);
+
+pf = lengthCompare; // pf now points to the function named lengthCompare
+pf = &lengthCompare; // equivalent assignment: address-of operator is optional
+
+bool b1 = pf("hello", "goodbye"); // calls lengthCompare
+bool b2 = (*pf)("hello", "goodbye"); // equivalent call
+bool b3 = lengthCompare("hello", "goodbye"); // equivalent call
+```
+
+
+
+## Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
 - [C++ Interview](https://github.com/huihut/interview)
 
