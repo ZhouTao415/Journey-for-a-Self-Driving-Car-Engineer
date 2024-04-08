@@ -299,6 +299,23 @@ int main() {
 - Thus, on the second invocation, the value of ctr is 1, on the third it is 2, and so on.
 */
 ```
+```cpp
+class Account {
+public:
+    void calculate() { amount += amount * interestRate; }
+    static double rate() { return interestRate; }
+    static void rate(double);
+private:
+    std::string owner;
+    double amount;
+    // The static members of a class exist outside any object.
+    // Objects do not contain data associated with static data members.
+    // There is only one **interestRate** object that will be shared by all the Account objects.
+    static double interestRate;
+    static double initRate();
+};
+```
+
 
 
 ### 6.2. 参数传递 Argument Passing
