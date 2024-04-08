@@ -310,12 +310,25 @@ private:
     double amount;
     // The static members of a class exist outside any object.
     // Objects do not contain data associated with static data members.
-    // There is only one **interestRate** object that will be shared by all the Account objects.
+    // There is only one interestRate object that will be shared by all the Account objects.
     static double interestRate;
     static double initRate();
 };
 ```
+```cpp
+double r;
+r = Account::rate(); // access a static member using the scope operator(::)
 
+Account ac1;
+Account *ac2 = &ac1;
+// equivalent ways to call the static member rate function
+r = ac1.rate(); // through an Account object or reference
+r = ac2->rate(); // through a pointer to an Account object
+
+// define and initialize a static class member
+double Account::interestRate = initRate();
+```
+- we can use a static member as a default argument
 
 
 ### 6.2. 参数传递 Argument Passing
@@ -324,6 +337,51 @@ private:
 - 指针参数传递本质上是值传递, 它所传递的是一个地址值.
 - 一般情况下, 输入用传值或者传const reference. 输出传引用(或者指针).
 
+6.3. 内联函数
+6.3.1. 使用
+
+将函数指定为内联函数(inline), 通常就是将它在每个调用点上"内联地"展开.
+
+一般来说, 内联机制用于优化规模较小(Google C++ Style 建议 10 行以下)、流程直接、频繁调用的函数.
+
+在类声明中定义的函数, 除了虚函数的其他函数都会自动隐式地当成内联函数.
+6.3.2. 编译器对inline函数的处理步骤
+
+将inline函数体复制到inline函数调用点处;
+为所用inline函数中的局部变量分配内存空间;
+将inline函数的的输入参数和返回值映射到调用方法的局部变量空间中;
+如果inline函数有多个返回点, 将其转变为inline函数代码块末尾的分支(使用 GOTO).
+6.3.3. 优缺点
+
+优点:
+
+内联函数同宏函数一样将在被调用处进行代码展开, 省去了参数压栈、栈帧开辟与回收, 结果返回等, 从而提高程序运行速度.
+内联函数相比宏函数来说, 在代码展开时, 会做安全检查或自动类型转换(同普通函数), 而宏定义则不会.
+在类中声明同时定义的成员函数, 自动转化为内联函数, 因此内联函数可以访问类的成员变量, 宏定义则不能.
+内联函数在运行时可调试, 而宏定义不可以.
+缺点:
+
+代码膨胀. 内联是以代码膨胀(复制)为代价, 消除函数调用带来的开销. 如果执行函数体内代码的时间, 相比于函数调用的开销较大, 那么效率的收获会很少. 另一方面, 每一处内联函数的调用都要复制代码, 将使程序的总代码量增大, 消耗更多的内存空间.
+inline函数无法随着函数库升级而升级. inline函数的改变需要重新编译, 不像non-inline可以直接链接.
+是否内联, 程序员不可控. 内联函数只是对编译器的建议, 是否对函数内联, 决定权在于编译器.
+6.4. 返回类型和return语句
+调用一个返回引用的函数得到左值, 其他返回类型得到右值.
+```cpp
+int x = 10;
+int& getRef() {
+    return x; // 返回全局变量x的引用
+}
+getRef() = 20; // 由于getRef()返回了一个引用，我们可以将它用作左值
+
+//-------------------------------------------------------------
+int getValue() {
+    return 5; // 返回一个值
+}
+int main() {
+    int y = getValue(); // 正确：右值可以用来初始化变量
+    getValue() = 10;    // 错误：不能将值赋给一个右值
+}
+```
 
 Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
