@@ -441,6 +441,8 @@ bool b1 = pf("hello", "goodbye"); // calls lengthCompare
 bool b2 = (*pf)("hello", "goodbye"); // equivalent call
 bool b3 = lengthCompare("hello", "goodbye"); // equivalent call
 ```
+<details>
+  <summary>点击展开/折叠代码</summary>
 ```cpp
 #include <iostream>
 #include <algorithm> // for std::sort
@@ -486,7 +488,7 @@ int main() {
 
     return 0;
 }
-
+</details>
 ```
 
 
