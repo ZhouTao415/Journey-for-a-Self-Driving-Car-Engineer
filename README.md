@@ -70,3 +70,7 @@ This repository introduces the process of my learning, covering the theoretical 
 <a id="Bibliography"></a>
 # Bibliography:
 - [如何能成为一个优秀的自动驾驶决策规划控制工程师？](https://zhuanlan.zhihu.com/p/371201813)
+- [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
+- [C++ Interview](https://github.com/huihut/interview)
+- [基于VSCode和CMake实现的C/C++开发-Linux篇](https://xbing.notion.site/xiaobing-9bab00c7243c46d3a02b08aa54921a52?p=c330a94669a84c2480a59ba708fd4ece&pm=c)
+- [代码随想录](https://programmercarl.com/)
