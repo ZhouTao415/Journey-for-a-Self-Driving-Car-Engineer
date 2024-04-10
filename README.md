@@ -20,7 +20,7 @@ This repository introduces the process of my learning, covering the theoretical 
 
 <a id="Toolbox"></a>
 ## Toolbox
-- Linux
+- <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/Linux"> Linux </a> 
 - ROS2
 - CMake
 - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/tree/main/Git"> Git </a> 
