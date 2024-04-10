@@ -20,12 +20,13 @@ This repository introduces the process of my learning, covering the theoretical 
 
 <a id="Toolbox"></a>
 ## Toolbox
-- <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/Linux"> Linux </a> 
+- <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/Linux"> Linux </a>
+- g++
+- GDB
+- Docker
 - ROS2
 - CMake
 - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/tree/main/Git"> Git </a> 
-- GDB
-- Docker
 - ...
 
 <a id="Code"></a>
