@@ -266,8 +266,8 @@ English
     
     **Vim具有“编辑器之神”的称号**，学会Vim便可在Linux的世界里**畅行无阻**，**尤其是在终端中**。
   
-    👇
-    [**Vim cheatsheet**](https://devhints.io/vim)
+    🤜[**Vim cheatsheet**](https://devhints.io/vim)🤛
+    
     
 - **gedit [file]**
     - Linux 下的一个纯文本编辑器
