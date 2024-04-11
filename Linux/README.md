@@ -163,22 +163,22 @@ English
     --------------------------------------------------------------------------
     ```
     - 用法1：touch [路径]
-    ```bash
-    # 在当前目录下创建linux.txt文件
-    touch linux.txt
-    
-    # 在上级目录下创建linux文件
-    touch ../linux
-    
-    # 在/home/bing/目录下创建myfile文件
-    touch /home/bing/myfile
-    ```
+      ```bash
+      # 在当前目录下创建linux.txt文件
+      touch linux.txt
+      
+      # 在上级目录下创建linux文件
+      touch ../linux
+      
+      # 在/home/bing/目录下创建myfile文件
+      touch /home/bing/myfile
+      ```
     
     - 用法2：touch [路径1] [路径2]
-    ```bash
-    # 在当前目录下创建file file.txt 两个文件
-    touch file file.txt
-    ```
+      ```bash
+      # 在当前目录下创建file file.txt 两个文件
+      touch file file.txt
+      ```
     
 <a id="Bibliography"></a>
 # Bibliography:
