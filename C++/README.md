@@ -498,4 +498,4 @@ bool b3 = lengthCompare("hello", "goodbye"); // equivalent call
 - [C++ Interview](https://github.com/huihut/interview)
 
 
-                                                                                                                                                                                              [BackTop](#BackTop)
+[BackTop](#BackTop)
