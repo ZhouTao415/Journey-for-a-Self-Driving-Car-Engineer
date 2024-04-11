@@ -143,7 +143,14 @@ English
     # 创建 ~/a/b/c 目录
     mkdir -p ~/a/b/c
     ```
-  
+  - **用法3：mkdir 路径1 [路径2] [路径3]**
+    
+    **含义：** 一次性创建多个目录
+    ```bash
+    # 在当前目录分别创建a、b、c三个文件夹
+    mkdir a b c
+    ```
+    
 
     
 <a id="Bibliography"></a>
