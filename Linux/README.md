@@ -117,18 +117,18 @@ English
     ```
     
   - 用法2：cd [相对路径]
-  ```bash
-  # 进入到上级目录下
-  cd ..
-  # 进入到上级目录中的local目录下
-  cd ../local
-  ```
+    ```bash
+    # 进入到上级目录下
+    cd ..
+    # 进入到上级目录中的local目录下
+    cd ../local
+    ```
   
   - 用法3：cd [绝对路径]
-  ```bash
-  # 进入到/usr/local目录下
-  cd /usr/local
-  ```
+    ```bash
+    # 进入到/usr/local目录下
+    cd /usr/local
+    ```
 
 
     
