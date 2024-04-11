@@ -1,4 +1,3 @@
-<a id="BackTop"></a>
 <div align="center">
 📖 Linux
 </div> 
@@ -135,5 +134,3 @@ English
 <a id="Bibliography"></a>
 # Bibliography:
 - [基于VSCode和CMake实现的C/C++开发-Linux篇](https://xbing.notion.site/xiaobing-9bab00c7243c46d3a02b08aa54921a52?p=c330a94669a84c2480a59ba708fd4ece&pm=c)
-
-[**Back Top**](#BackTop)
