@@ -124,11 +124,26 @@ English
     ```
   
   - 用法3：cd [绝对路径]
-    ```Bash
+    ```bash
     # 进入到/usr/local目录下
     cd /usr/local
     ```
 
+- mkdir - make directories
+  - **作用：**创建目录
+  - **用法1：mkdir 路径**
+    ```bash
+    # 在当前路径下创建出目录“myfolder”
+    mkdir myfolder
+    ```
+
+  - **用法2：mkdir -p 路径**
+      **含义：**一次性创建多层不存在的目录
+    ```bash
+    # 创建 ~/a/b/c 目录
+    mkdir -p ~/a/b/c
+    ```
+  
 
     
 <a id="Bibliography"></a>
