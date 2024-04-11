@@ -129,7 +129,7 @@ English
     cd /usr/local
     ```
 
-- mkdir - make directories
+- **mkdir - make directories**
   - **作用：**创建目录
   - **用法1：mkdir 路径**
     ```bash
@@ -150,8 +150,35 @@ English
     # 在当前目录分别创建a、b、c三个文件夹
     mkdir a b c
     ```
-    
 
+- **touch - change file timestamps**
+    - **作用：**创建新文件
+    ```bash
+    --------------------------------------------------------------------------
+    # 									【为什么创建新文件是touch】
+    # 1. touch的作用本来不是创建文件，而是将指定文件的修改时间设置为当前时间。
+    就是假装“碰”（touch）了一下这个文件，假装文件被“修改”了，于是文件的修改时间就是被设置为当前时间。
+    # 2. 这带来了一个副作用，就是当touch一个不存在的文件的时候，它会创建这个文件。
+    然后，由于touch已经可以完成创建文件的功能了，就不再需要一个单独的create了。
+    --------------------------------------------------------------------------
+    ```
+    - 用法1：touch [路径]
+    ```bash
+    # 在当前目录下创建linux.txt文件
+    touch linux.txt
+    
+    # 在上级目录下创建linux文件
+    touch ../linux
+    
+    # 在/home/bing/目录下创建myfile文件
+    touch /home/bing/myfile
+    ```
+    
+    - 用法2：touch [路径1] [路径2]
+    ```bash
+    # 在当前目录下创建file file.txt 两个文件
+    touch file file.txt
+    ```
     
 <a id="Bibliography"></a>
 # Bibliography:
