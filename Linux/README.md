@@ -51,4 +51,9 @@ English
 - **Mnt：**当外接设备需要挂载的时候，就需要挂载到mnt目录下。
 
 
+
+<a id="Bibliography"></a>
+# Bibliography:
+- [基于VSCode和CMake实现的C/C++开发-Linux篇](https://xbing.notion.site/xiaobing-9bab00c7243c46d3a02b08aa54921a52?p=c330a94669a84c2480a59ba708fd4ece&pm=c)
+
 [**Back Top**](#BackTop)
