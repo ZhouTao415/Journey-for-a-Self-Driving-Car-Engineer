@@ -153,15 +153,15 @@ English
 
 - **touch - change file timestamps**
     - **作用：**创建新文件
-    ```bash
-    --------------------------------------------------------------------------
-    # 									【为什么创建新文件是touch】
-    # 1. touch的作用本来不是创建文件，而是将指定文件的修改时间设置为当前时间。
-    就是假装“碰”（touch）了一下这个文件，假装文件被“修改”了，于是文件的修改时间就是被设置为当前时间。
-    # 2. 这带来了一个副作用，就是当touch一个不存在的文件的时候，它会创建这个文件。
-    然后，由于touch已经可以完成创建文件的功能了，就不再需要一个单独的create了。
-    --------------------------------------------------------------------------
-    ```
+      ```bash
+      --------------------------------------------------------------------------
+      # 									【为什么创建新文件是touch】
+      # 1. touch的作用本来不是创建文件，而是将指定文件的修改时间设置为当前时间。
+      就是假装“碰”（touch）了一下这个文件，假装文件被“修改”了，于是文件的修改时间就是被设置为当前时间。
+      # 2. 这带来了一个副作用，就是当touch一个不存在的文件的时候，它会创建这个文件。
+      然后，由于touch已经可以完成创建文件的功能了，就不再需要一个单独的create了。
+      --------------------------------------------------------------------------
+      ```
     - 用法1：touch [路径]
       ```bash
       # 在当前目录下创建linux.txt文件
@@ -179,7 +179,104 @@ English
       # 在当前目录下创建file file.txt 两个文件
       touch file file.txt
       ```
+
+- **rm - remove files or directories**
+    - **作用：**删除文件/目录
+    - **用法1：rm [选项] 需要移除的文件路径**
+      ```bash
+      # 删除当前路径下的myfile文件
+      rm myfile
+      # 删除/usr路径下的myfile文件
+      rm /usr/myfile
+      ```
+    - 用法2：rm [选项] 需要移除的目录
+      ```bash
+      # 删除当前路径下的abc文件
+      rm -rf myfolder
+      # 删除/usr路径下的abc文件
+      rm -rf /usr/myfolder
+      -r: recursive
+      -f: force
+      ```
+      
+- **cp - copy files and directories**
+    - **作用：**复制文件/文件夹到指定的位置
+    - **用法1：cp [被复制的文件路径] [文件被复制到的路径]**
+      ```bash
+      # cp命令来复制一个文件
+      cp /home/bing/myfile ./
+      ```
+      
+    - **用法2：cp -r [被复制的文件夹路径] [文件夹被复制到的路径]***
+        
+        **含义：**-r 表示递归复制，复制文件夹的时候需要加 -r
+        ```bash
+        # 复制/home/bing/myfolder文件夹到根目录/下
+        cp -r /home/bing/myfolder /
+        ```
+
+- **mv - move (rename) files**
+    - **作用：**移动文件到新的位置，或者重命名文件
+    - **用法：mv [需要移动的文件路径] [需要保存的位置路径]**
+      ```bash
+      # 移动当前目录下myfile文件到根目录/下
+      mv myfile /myfile
+      
+      # 移动当前目录下myfolder文件夹到根目录/下
+      mv myfolder /myfolder
+      
+      # 移动当前目录下myfile到根目录/下，并重命名为myfile007
+      mv myfile myfile007
+      ```
+
+- **man - an interface to the system reference manuals**
+    - **作用：**包含了Linux中全部命令手册
+    - **用法：man [命令]**
+    - **含义：**查看命令使用手册，按 q 退出
+      ```bash
+      # 查看ls命令的手册
+      man ls
+      # 查看cd命令的手册
+      man cd
+      # 查看man命令的手册
+      man man
+      ```
+
+- **reboot - reboot the machine**
+    - **作用：**重启linux系统
+    - **用法：reboot**
+      ```bash
+      # 立即重启
+      reboot
+      ```
+
+- **shutdown - power-off the machine**
+    - **作用：**关机
+    - **用法：shut -h [时间]**
+      ```bash
+      # 立即关机
+      shutdown -h now
+      ```
+### **4. 文件编辑**
+
+- **Vim [file]**
+    - 所有的 Linux系统都会内建 Vi/Vim编辑器，其他的编辑器则不一定会存在
+    - Vim是所有Unix及Linux系统下标准的编辑器
+    - **Vim 具有程序开发的能力，也可以用来对文件进行简单的编辑**
     
+    **Vim具有“编辑器之神”的称号**，学会Vim便可在Linux的世界里**畅行无阻**，**尤其是在终端中**。
+    👇
+    [**Vim cheatsheet**](https://devhints.io/vim)
+    
+- **gedit [file]**
+    - Linux 下的一个纯文本编辑器
+    - 可以根据不同的语言高亮显现关键字和标识符。
+- **nano [file]**
+    - nano 是一个小巧的文本编辑器
+    - 它比vi/vim要简单得多，比较适合Linux初学者使用。
+    - 某些Linux发行版的默认编辑器就是nano。
+
 <a id="Bibliography"></a>
 # Bibliography:
 - [基于VSCode和CMake实现的C/C++开发-Linux篇](https://xbing.notion.site/xiaobing-9bab00c7243c46d3a02b08aa54921a52?p=c330a94669a84c2480a59ba708fd4ece&pm=c)
+- [Vim cheatsheet](https://devhints.io/vim)
