@@ -124,7 +124,7 @@ English
     ```
   
   - 用法3：cd [绝对路径]
-    ```bash
+    ```Bash
     # 进入到/usr/local目录下
     cd /usr/local
     ```
