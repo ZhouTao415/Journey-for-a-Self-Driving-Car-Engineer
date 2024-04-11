@@ -265,6 +265,7 @@ English
     - **Vim 具有程序开发的能力，也可以用来对文件进行简单的编辑**
     
     **Vim具有“编辑器之神”的称号**，学会Vim便可在Linux的世界里**畅行无阻**，**尤其是在终端中**。
+  
     👇
     [**Vim cheatsheet**](https://devhints.io/vim)
     
