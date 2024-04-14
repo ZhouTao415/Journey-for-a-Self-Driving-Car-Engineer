@@ -5,7 +5,7 @@ Gcc/ g++
 # Gcc/ g++
 
 ## 1. 编译器安装
-- 安装GCC
+- 安装GCC/g++
   ```bash
   # 通过以下命令安装编译器和调试器
   sudo apt install cmake
