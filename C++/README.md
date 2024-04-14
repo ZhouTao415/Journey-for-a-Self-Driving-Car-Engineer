@@ -1,4 +1,3 @@
-<a id="BackTop"></a>
 <div align="center">
 📖 Github
 </div> 
@@ -497,6 +496,4 @@ bool b3 = lengthCompare("hello", "goodbye"); // equivalent call
 ## Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
 - [C++ Interview](https://github.com/huihut/interview)
-
-
-[**Back Top**](#BackTop)
+- [cppreference.com](https://en.cppreference.com/w/)
