@@ -23,10 +23,9 @@ This repository introduces the process of my learning, covering the theoretical 
 - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/Linux"> Linux </a>
 - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/tree/main/g%2B%2B"> g++ </a>
 - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/blob/main/GDB"> GDB </a>
-- 
+- <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/tree/main/CMake"> CMake </a>
 - Docker
 - ROS2
-- CMake
 - <a href = "https://github.com/ZhouTao415/Journey-for-a-Self-Driving-Car-Engineer/tree/main/Git"> Git </a> 
 - ...
 
