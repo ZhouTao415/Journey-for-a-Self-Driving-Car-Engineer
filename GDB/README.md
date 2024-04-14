@@ -5,9 +5,10 @@ GDB
 # GDB
 
 ## 1. 编译器安装
-- 安装GCC
+- 安装gdb
   ```bash
   sudo apt update
+  # 通过以下命令安装调试器
   sudo apt install gdb
   ```
 - 安装成功确认
