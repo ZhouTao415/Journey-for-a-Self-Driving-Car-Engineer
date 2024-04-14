@@ -186,9 +186,70 @@ gcc/ g++
   ./b.out
   ```
 ### 3.2 生成库文件并编译
-- 链接静态库生成可执行文件① :1:：
-
-- 
+- 链接静态库生成可执行文件①:
+  ```bash
+  ## 进入src目录下
+  $cd src
+  
+  # 汇编，生成Swap.o文件
+  g++ Swap.cpp -c -I../include
+  # 生成静态库libSwap.a
+  ar rs libSwap.a Swap.o
+  
+  ## 回到上级目录
+  $cd ..
+  
+  # 链接，生成可执行文件:staticmain
+  g++ main.cpp -Iinclude -Lsrc -lSwap -o staticmain
+  ```
+- 链接动态库生成可执行文件②：
+  ```bash
+  ## 进入src目录下
+  $cd src
+  
+  # 生成动态库libSwap.so
+  g++ Swap.cpp -I../include -fPIC -shared -o libSwap.so
+  ## 上面命令等价于以下两条命令
+  # gcc Swap.cpp -I../include -c -fPIC
+  # gcc -shared -o libSwap.so Swap.o
+  
+  ## 回到上级目录
+  $cd ..
+  
+  # 链接，生成可执行文件:sharemain
+  g++ main.cpp -Iinclude -Lsrc -lSwap -o sharemain
+  ```
+- **编译完成后的目录结构**  
+  最终目录结构：2 directories, 8 files
+  ```bash
+  # 最终目录结构
+  .
+  ├── include
+  │   └── Swap.h
+  
+  ├── main.cpp
+  ├── sharemain
+  ├── src
+  │   ├── libSwap.a
+  │   ├── libSwap.so
+  │   ├── Swap.cpp
+  │   └── Swap.o
+  └── staticmain
+  
+  2 directories, 8 files
+  ```
+### 3.3 运行可执行文件
+- 运行可执行文件①:
+  ```bash
+  # 运行可执行文件
+  ./staticmain
+  ​```
+  
+- 运行可执行文件②:
+  ```bash
+  # 运行可执行文件
+  LD_LIBRARY_PATH=src ./sharemain
+  ```
 <a id="Bibliography"></a>
 # Bibliography:
 - [基于VSCode和CMake实现的C/C++开发-Linux篇](https://xbing.notion.site/xiaobing-9bab00c7243c46d3a02b08aa54921a52?p=c330a94669a84c2480a59ba708fd4ece&pm=c)
