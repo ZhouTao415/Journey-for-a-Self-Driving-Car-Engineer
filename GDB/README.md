@@ -72,5 +72,31 @@ $(gdb)quit(q) 	# 退出gdb
 ```
 > Tips:
 > 
-> 1. 编译程序时需要加上-g，之后才能用gdb进行调试：gcc -g main.c -o main
+> 1. 编译程序时需要加上**-g**，之后才能用gdb进行调试：**gcc -g main.c -o main**
 > 2. 回车键：重复上一命令
+
+## 2 [实战] 命令行调试
+
+```bash
+#include <iostream>
+using namespace std;
+
+int main(int argc,char **argv)
+{
+    int N = 100;
+    int sum = 0;
+    int i = 1;
+
+// calculate sum from 1 to 100
+    while (i <= N)
+    {
+        sum = sum + i;
+        i = i + 1;
+    }
+
+    cout << "sum = " << sum << endl;
+    cout << "The program is over."   << endl;
+
+    return 0;
+}
+```
