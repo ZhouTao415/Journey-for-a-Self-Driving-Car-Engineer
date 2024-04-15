@@ -75,7 +75,7 @@ $(gdb)quit(q) 	# 退出gdb
 > 1. 编译程序时需要加上**-g**，之后才能用gdb进行调试：**gcc -g main.c -o main**
 > 2. 回车键：重复上一命令
 
-## 2 [实战] 命令行调试
+## 2. [实战] 命令行调试
 
 ```bash
 #include <iostream>
