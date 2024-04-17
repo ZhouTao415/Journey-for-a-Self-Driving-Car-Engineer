@@ -492,8 +492,12 @@ bool b3 = lengthCompare("hello", "goodbye"); // equivalent call
 
 </details>
 
+# 7. 类
+## 7.1. 定义抽象数据类型
+### 7.1.1. this指针
 
 ## Bibliography: 
 - [C++ 面经](https://zhuanlan.zhihu.com/p/675399586)
 - [C++ Interview](https://github.com/huihut/interview)
 - [cppreference.com](https://en.cppreference.com/w/)
+- [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
