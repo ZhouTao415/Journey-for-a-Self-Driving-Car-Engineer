@@ -509,7 +509,7 @@ bool b3 = lengthCompare("hello", "goodbye"); // equivalent call
 
 ### 7.1.2. 拷贝函数
 
-- [C++深拷贝与浅拷贝]([https://blog.csdn.net/u010700335/article/details/39830425](https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy))
+- [C++深拷贝与浅拷贝](https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy)
 - 在未定义显示拷贝构造函数的情况下, 系统会调用默认的拷贝函数——即浅拷贝, 它能够完成成员的一一复制. 当数据成员中没有指针时, 浅拷贝是可行的; 但当数据成员中有指针时, 如果采用简单的浅拷贝, 则两类中的两个指针将指向同一个地址, 当对象快结束时, 会调用两次析构函数, 而导致指针悬挂现象, 所以此时必须采用深拷贝.
 - 深拷贝与浅拷贝的区别就在于深拷贝会在堆内存中另外申请空间来储存数据, 从而也就解决了指针悬挂的问题. 简而言之, 当数据成员中有指针时, 必须要用深拷贝.
 
