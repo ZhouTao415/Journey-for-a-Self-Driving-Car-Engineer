@@ -294,5 +294,3 @@ add_executable( swap_01 main.cpp )
 # link the new swap_01 target with the swap_lib target
 target_link_libraries( swap_01 swap_liby )
 ```
-
-##
