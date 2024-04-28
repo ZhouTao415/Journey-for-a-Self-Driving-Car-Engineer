@@ -172,3 +172,127 @@ ${HELLO} / IF(HELLO)
 - **CMAKE_CXX_COMPILER：指定C++编译器**
 - **EXECUTABLE_OUTPUT_PATH：可执行文件输出的存放路径**
 - **LIBRARY_OUTPUT_PATH：库文件输出的存放路径**
+
+## **4 CMake编译工程**
+
+CMake目录结构：项目主目录存在一个CMakeLists.txt文件
+
+**两种方式设置编译规则**：
+
+1. 包含源文件的子文件夹**包含**CMakeLists.txt文件，主目录的CMakeLists.txt通过add_subdirectory添加子目录即可；
+2. 包含源文件的子文件夹**未包含**CMakeLists.txt文件，子目录编译规则体现在主目录的CMakeLists.txt中；
+
+### **4.1 编译流程**
+
+**在 linux 平台下使用 CMake 构建C/C++工程的流程如下:**
+
+- 手动编写 CMakeLists.txt。
+- 执行命令 `cmake PATH`生成 Makefile ( PATH 是顶层CMakeLists.txt 所在的目录 )。
+- 执行命令`make` 进行编译。
+
+---
+
+```bash
+# important tips
+.  		# 表示当前目录
+./ 		# 表示当前目录
+
+..  	# 表示上级目录
+../ 	# 表示上级目录
+```
+
+---
+
+### **4.2 两种构建方式**
+
+- **内部构建(in-source build)**：不推荐使用
+    
+    内部构建会在同级目录下产生一大堆中间文件，这些中间文件并不是我们最终所需要的，和工程源文件放在一起会显得杂乱无章。
+    
+    ```bash
+    ## 内部构建
+    
+    # 在当前目录下，编译本目录的CMakeLists.txt，生成Makefile和其他文件
+    cmake .
+    # 执行make命令，生成target
+    make
+    ```
+    
+## **5 【实战】CMake代码实践**
+
+针对第五章写的两个小项目来写对应的CMakeLists.txt
+
+### **5.1 最小CMake工程**
+
+```bash
+# Set the minimum version of CMake that can be used
+cmake_minimum_required(VERSION 3.0)
+
+# Set the project name
+project (HELLO)
+
+# Add an executable
+add_executable(hello_cmake main.cpp)
+```
+
+### **5.2 多目录工程 - 直接编译**
+
+```bash
+# Set the minimum version of CMake that can be used
+cmake_minimum_required(VERSION 3.0)
+
+#project name
+project(SWAP)
+
+#head file pat
+include_directories( include )
+
+#source directory files to var
+add_subdirectory( src DIR_SRCS )
+
+#add executable file
+add_executable(swap_02 ${TEST_MATH})
+
+#add link library
+target_link_libraries(${FS_BUILD_BINARY_PREFIX}sqrt ${LIBRARIES})
+```
+
+### ### **5.3 多目录工程 - 生成库编译**
+
+```bash
+# Set the minimum version of CMake that can be used
+cmake_minimum_required(VERSION 3.0)
+
+#project name
+project(SWAP_LIBRARY)
+
+#add compile options
+add_compile_options("-Wall -std=c++11")
+
+#set CMAKE_BUILD_TYPE
+set( CMAKE_BUILD_TYPE Debug )
+
+# set output binary path
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+
+############################################################
+# Create a library
+############################################################
+
+#Generate the static library from the library sources
+add_library( swap_library STATIC src/Swap.cpp )
+
+target_include_directories( swap_lib PUBLIC ${PROJECT_SOURCE_DIR}/include )
+
+############################################################
+# Create an executable
+############################################################
+
+# Add an executable with the above sources
+add_executable( swap_01 main.cpp )
+
+# link the new swap_01 target with the swap_lib target
+target_link_libraries( swap_01 swap_liby )
+```
+
+##
